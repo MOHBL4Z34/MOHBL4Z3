@@ -29,7 +29,29 @@
     </section>
 
         <section class="quick-links">
-      <a href="/feed">Feed</a>
+  <section id="feed">
+  <h2>📈 My Learning Feed</h2>
+  <textarea id="achievements" rows="8" cols="40" placeholder="Write your achievements here..."></textarea><br>
+  <button onclick="saveAchievements()">💾 Save</button>
+  <p id="status"></p>
+</section>
+
+<script>
+  // Load saved data when the page loads
+  window.onload = () => {
+    const saved = localStorage.getItem("myAchievements");
+    if (saved) {
+      document.getElementById("achievements").value = saved;
+    }
+  }
+
+  // Save to localStorage
+  function saveAchievements() {
+    const content = document.getElementById("achievements").value;
+    localStorage.setItem("myAchievements", content);
+    document.getElementById("status").innerText = "✅ Saved!";
+  }
+</script>
       <a href="tafsir.html">Qur’an</a>
 <section id="languages">
   <h2>🌍 Languages</h2>
