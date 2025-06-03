@@ -37,3 +37,38 @@ body { font-family: 'Noto Sans', sans-serif; line-height:1.5; }
 
 /* التذييل */
 footer { text-align:center; padding:1rem; font-size:0.9rem; color:#666; }
+/* ===== Plan Cards - Upper Cards Styling ===== */
+.plan-card {
+  background-color: #202020; /* لون خلفية داكن */
+  color: #ffffff;            /* لون النص أبيض */
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.plan-card:hover {
+  transform: scale(1.02);
+}
+
+.plan-card h4 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #ffc107; /* لون العنوان ذهبي */
+}
+
+.plan-card p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.plan-card a {
+  color: #4fc3f7; /* لون الرابط أزرق فاتح */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.plan-card a:hover {
+  text-decoration: underline;
+}
