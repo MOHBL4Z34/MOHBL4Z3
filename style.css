@@ -72,3 +72,22 @@ footer { text-align:center; padding:1rem; font-size:0.9rem; color:#666; }
 .plan-card a:hover {
   text-decoration: underline;
 }
+.plan-card {
+  width: 100%;
+  max-width: 320px;
+  min-width: 280px;
+  flex: 1 1 300px;
+  background-color: #1e1e1e;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.plan-cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
