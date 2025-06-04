@@ -1,6 +1,6 @@
 /* إعادة التعيين والأساسيات */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: 'Noto Sans', sans-serif; line-height:1.5; }
+body { font-family: 'Noto Sans', sans-serif; line-height:1.5; background:#f9f9f9; }
 
 /* الشريط العلوي */
 .topbar {
@@ -15,47 +15,37 @@ body { font-family: 'Noto Sans', sans-serif; line-height:1.5; }
 }
 .hero h1 { font-family:'Poppins',sans-serif; font-size:1.5rem; margin-bottom:0.5rem; }
 
-/* بطاقات الجدول */
+/* بطاقات البلان العلوية */
 .plan-cards {
-  display:flex; overflow-x:auto; gap:1rem; padding:1rem;
-}
-.card {
-  flex:0 0 40%; background:#fff; padding:1rem; border-radius:8px;
-  box-shadow:0 2px 4px rgba(0,0,0,0.1);
-  text-align:center; font-size:1.1rem;
-}
-
-/* الروابط السريعة */
-.quick-links {
-  display:grid; grid-template-columns:repeat(4,1fr);
-  gap:1rem; padding:1rem;
-}
-.quick-links a {
-  display:block; text-align:center; padding:0.5rem; background:#c89f65;
-  color:#fff; text-decoration:none; border-radius:4px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 1rem;
 }
 
-/* التذييل */
-footer { text-align:center; padding:1rem; font-size:0.9rem; color:#666; }
-/* ===== Plan Cards - Upper Cards Styling ===== */
-.plan-card {
-  background-color: #202020; /* لون خلفية داكن */
-  color: #ffffff;            /* لون النص أبيض */
-  border-radius: 12px;
+.card, .plan-card {
+  flex: 1 1 300px;
+  max-width: 320px;
+  min-width: 280px;
+  background-color: #1e1e1e;
+  color: white;
+  border-radius: 10px;
   padding: 20px;
-  margin-bottom: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  text-align: center;
   transition: transform 0.2s ease;
 }
 
-.plan-card:hover {
+.card:hover, .plan-card:hover {
   transform: scale(1.02);
 }
 
 .plan-card h4 {
   font-size: 22px;
   margin-bottom: 8px;
-  color: #ffc107; /* لون العنوان ذهبي */
+  color: #ffc107;
 }
 
 .plan-card p {
@@ -63,31 +53,53 @@ footer { text-align:center; padding:1rem; font-size:0.9rem; color:#666; }
   margin-bottom: 10px;
 }
 
-.plan-card a {
-  color: #4fc3f7; /* لون الرابط أزرق فاتح */
+.plan-card a, .card a {
+  color: #4fc3f7;
   text-decoration: none;
   font-weight: bold;
 }
-
-.plan-card a:hover {
+.plan-card a:hover, .card a:hover {
   text-decoration: underline;
 }
-.plan-card {
-  width: 100%;
-  max-width: 320px;
-  min-width: 280px;
-  flex: 1 1 300px;
-  background-color: #1e1e1e;
+
+/* روابط سريعة - أيقونات مخصصة */
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+.quick-links a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: #c89f65;
   color: white;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 10px;
-  box-sizing: border-box;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+}
+.quick-links a:hover {
+  background: #a67c43;
 }
 
-.plan-cards-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+/* textarea achievement box */
+textarea#achievements {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* التذييل */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  background-color: #f1f1f1;
 }
