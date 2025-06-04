@@ -1,49 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NurLearn - Home</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>NurLearn Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <header>
-    <h1>NurLearn</h1>
-    <p>Upgrade your learning in Islamic and academic fields</p>
+  <header class="topbar">
+    <div class="logo">NurLearn</div>
+    <nav class="nav-icons">
+      <button aria-label="Menu">☰</button>
+      <button aria-label="Profile">👤</button>
+    </nav>
   </header>
 
-  <section class="plan-cards">
-    <div class="card">
-      <h3>Memorization Plan</h3>
-      <p>Track your Quran memorization journey easily.</p>
-      <a href="quran.html">Go to Plan</a>
-    </div>
-    <div class="card">
-      <h3>Self-Study</h3>
-      <p>Learn independently with customized resources.</p>
-      <a href="#">Start Now</a>
-    </div>
-    <div class="card">
-      <h3>Time Management</h3>
-      <p>Organize your study and worship schedule efficiently.</p>
-      <a href="#">View Tools</a>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <h1>Good Morning, Mohammed!</h1>
+      <p>Fajr in <strong>3h 50m</strong></p>
+    </section>
 
-  <section class="features">
-    <a class="feature-card" href="quran.html">
-      <img src="images/quran-icon.png" alt="Quran Icon" />
-      <h4>Quran</h4>
-    </a>
+    <!-- البطاقات العلوية -->
+    <section class="plan-cards">
+      <div class="card">
+        <h3>📺 Content to Watch</h3>
+        <p>Those vids r on queue 4u to watch them.</p>
+        <a href="https://www.youtube.com/playlist?list=PLo3oxXUddw4_muG4RX-NBNVpoRzaxcQJL" target="_blank">▶️ Watch my Playlist</a>
+      </div>
 
-    <a class="feature-card" href="academies.html">
-      <img src="images/academy-icon.png" alt="Academy Icon" />
-      <h4>Academies</h4>
-    </a>
-  </section>
+      <a class="card" href="https://www.duolingo.com/profile/MOHBL4Z3" target="_blank">🟩 Duolingo</a>
+
+      <div class="plan-card">
+        <h4>🎮 PlayStation Zone</h4>
+        <p>Just enjoy the moment with PlayStation.</p>
+        <a href="https://profile.playstation.com/MOHBL4Z3" target="_blank">🔗 Visit my PSN Profile</a>
+      </div>
+    </section>
+
+    <!-- روابط سريعة - Qur'an, Academics وغيرها -->
+    <section class="quick-links">
+      <a href="tafsir.html">📖 Qur’an</a>
+      <a href="#academics">🎓 Academics</a>
+      <a href="#languages">🌍 Languages</a>
+      <a href="#feed">📈 My Feed</a>
+    </section>
+
+    <!-- My Learning Feed -->
+    <section id="feed">
+      <h2>📈 My Learning Feed</h2>
+      <textarea id="achievements" rows="8" cols="40" placeholder="Write your achievements here..."></textarea><br>
+      <button onclick="saveAchievements()">💾 Save</button>
+      <p id="status"></p>
+    </section>
+
+    <!-- لغات -->
+    <section id="languages">
+      <h2>🌍 Languages</h2>
+      <p>Enhance your language skills using these tools and platforms:</p>
+      <ul>
+        <li><a href="https://translate.google.com/" target="_blank">Google Translate</a> – Translate words and phrases quickly.</li>
+        <li><a href="https://dictionary.cambridge.org/" target="_blank">Cambridge Dictionary</a> – Understand meanings, pronunciations, and grammar usage.</li>
+        <li><a href="https://forvo.com/" target="_blank">Forvo</a> – Listen to native pronunciation of any word in many languages.</li>
+      </ul>
+    </section>
+
+    <!-- الأكاديميات -->
+    <section id="academics">
+      <h2>🎓 Academics</h2>
+      <p>Explore the core subjects for Grade 10 at Noran International British School:</p>
+      <ul>
+        <li><a href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-english-language-0500/" target="_blank">English Language</a></li>
+        <li><a href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-mathematics-0580/" target="_blank">Mathematics</a></li>
+        <li><a href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-physics-0625/" target="_blank">Physics</a></li>
+        <li><a href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-chemistry-0620/" target="_blank">Chemistry</a></li>
+        <li><a href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-biology-0610/" target="_blank">Biology</a></li>
+        <li><a href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-computer-science-0478/" target="_blank">Computer Science</a></li>
+        <li><a href="#" target="_blank">Science (General)</a></li>
+        <li><a href="#" target="_blank">Islamic Studies (Saudi Curriculum)</a></li>
+        <li><a href="#" target="_blank">Arabic Language (Saudi Curriculum)</a></li>
+      </ul>
+    </section>
+  </main>
 
   <footer>
-    <p>Made with sincerity by mohbl4z34 ❤️</p>
+    <p>© 2025 NurLearn</p>
   </footer>
+
+  <script>
+    // Load saved data when the page loads
+    window.onload = () => {
+      const saved = localStorage.getItem("myAchievements");
+      if (saved) {
+        document.getElementById("achievements").value = saved;
+      }
+    }
+
+    // Save to localStorage
+    function saveAchievements() {
+      const content = document.getElementById("achievements").value;
+      localStorage.setItem("myAchievements", content);
+      document.getElementById("status").innerText = "✅ Saved!";
+    }
+  </script>
 </body>
 </html>
