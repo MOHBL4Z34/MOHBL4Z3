@@ -103,3 +103,19 @@ footer {
   color: #666;
   background-color: #f1f1f1;
 }
+.btn-surah {
+  display: inline-block;
+  background-color: #c89f65;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-surah:hover {
+  background-color: #a87e4d;
+}
